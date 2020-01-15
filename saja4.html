@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!--css saja add 23.12.2019.-->
+    <link href="CSS/style.css" rel="stylesheet" />
+	
+	<script src="js/alertify.min.js"></script>
+	<!-- Bootstrap theme -->
+<link rel="stylesheet" href="css/themes/bootstrap.min.css"/>
+
+<!-- include the style -->
+<link rel="stylesheet" href="css/alertify.min.css" />
+<!-- include a theme -->
+<link rel="stylesheet" href="css/themes/default.min.css" />
+
+</head>
+
+
+<body>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ 
+<button id="test" onclick="test();">test</button>
+   
+   
+   <script>
+  /* function test(){
+    alertify.confirm(' Da li zelite da sacuvate formu!');
+   }
+   
+   
+   alertify.prompt("what is your name?", "lenovo",
+    function(evt, value) {
+        if (value === "lenovo") {
+            alertify.success('You entered: ' + value);
+        }
+    },
+    function() {
+        alertify.error('Cancel')
+    }
+);
+*/
+
+//get the closable setting value.
+var closable = alertify.confirm('test').setting('closable');
+//grab the dialog instance using its parameter-less constructor then set multiple settings at once.
+alertify.confirm()
+  .setting({
+    'label':'Agree',
+    'message': 'This dialog is : ' + (closable ? ' ' : ' not ') + 'closable.' ,
+    'onok': function(){ alertify.success('Great');}
+  }).show();
+
+
+
+
+
+
+
+    
+   alertify.defaults = {
+        // dialogs defaults
+        autoReset:true,
+        basic:false,
+        closable:true,
+        closableByDimmer:true,
+        invokeOnCloseOff:false,
+        frameless:false,
+        defaultFocusOff:false,
+        maintainFocus:true, // <== global default not per instance, applies to all dialogs
+        maximizable:true,
+        modal:true,
+        movable:true,
+        moveBounded:false,
+        overflow:true,
+        padding: true,
+        pinnable:true,
+        pinned:true,
+        preventBodyShift:false, // <== global default not per instance, applies to all dialogs
+        resizable:true,
+        startMaximized:false,
+        transition:'fadein',
+        transitionOff:false,
+        tabbable:'button:not(:disabled):not(.ajs-reset),[href]:not(:disabled):not(.ajs-reset),input:not(:disabled):not(.ajs-reset),select:not(:disabled):not(.ajs-reset),textarea:not(:disabled):not(.ajs-reset),[tabindex]:not([tabindex^="-"]):not(:disabled):not(.ajs-reset)',  // <== global default not per instance, applies to all dialogs
+
+        // notifier defaults
+        notifier:{
+        // auto-dismiss wait time (in seconds)  
+            delay:5,
+        // default position
+            position:'bottom-right',
+        // adds a close button to notifier messages
+            closeButton: false,
+        // provides the ability to rename notifier classes
+            classes : {
+                base: 'alertify-notifier',
+                prefix:'ajs-',
+                message: 'ajs-message',
+                top: 'ajs-top',
+                right: 'ajs-right',
+                bottom: 'ajs-bottom',
+                left: 'ajs-left',
+                center: 'ajs-center',
+                visible: 'ajs-visible',
+                hidden: 'ajs-hidden',
+                close: 'ajs-close'
+            }
+        },
+
+        // language resources 
+        glossary:{
+            // dialogs default title
+            title:'',
+            // ok button text
+            ok: 'OK',
+            // cancel button text
+            cancel: 'Cancel'            
+        },
+
+        // theme settings
+        theme:{
+            // class name attached to prompt dialog input textbox.
+            input:'ajs-input',
+            // class name attached to ok button
+            ok:'ajs-ok',
+            // class name attached to cancel button 
+            cancel:'ajs-cancel'
+        },
+        // global hooks
+        hooks:{
+            // invoked before initializing any dialog
+            preinit:function(instance){},
+            // invoked after initializing any dialog
+            postinit:function(instance){},
+        },
+    };
+
+   </script>
+	
+	
+	
+	</body>
+</html>
